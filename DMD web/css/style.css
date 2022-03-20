@@ -404,6 +404,8 @@ ol {
 
 .header__menu {
 	padding: 24px 0;
+	align-items: center;
+	text-align: center;
 }
 
 .header__menu ul li {
@@ -465,7 +467,7 @@ ol {
 }
 
 .header__menu ul li a {
-	font-size: 14px;
+	font-size: 1.5rem;
 	color: #252525;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -1020,47 +1022,6 @@ ol {
 
 .from-blog__title {
 	margin-bottom: 70px;
-}
-
-/*---------------------
-  Breadcrumb
------------------------*/
-
-.breadcrumb-section {
-	display: flex;
-	align-items: center;
-	padding: 45px 0 40px;
-}
-
-.breadcrumb__text h2 {
-	font-size: 46px;
-	color: #ffffff;
-	font-weight: 700;
-}
-
-.breadcrumb__option a {
-	display: inline-block;
-	font-size: 16px;
-	color: #ffffff;
-	font-weight: 700;
-	margin-right: 20px;
-	position: relative;
-}
-
-.breadcrumb__option a:after {
-	position: absolute;
-	right: -12px;
-	top: 13px;
-	height: 1px;
-	width: 10px;
-	background: #ffffff;
-	content: "";
-}
-
-.breadcrumb__option span {
-	display: inline-block;
-	font-size: 16px;
-	color: #ffffff;
 }
 
 /*---------------------
@@ -2258,6 +2219,7 @@ ol {
 	margin-top: 10px;
 }
 
+
 /*---------------------
   Blog
 -----------------------*/
@@ -2596,6 +2558,37 @@ ol {
 
 .blog__details__widget .blog__details__social a:last-child {
 	margin-right: 0;
+}
+
+/*---------------------
+  Policy
+-----------------------*/
+.content_policy {
+	margin: 20px 50px 50px 50px;
+}
+
+.content_purchase-policy {
+	margin: 20px 50px 50px 50px;
+}
+
+.payment-methods {
+	font-size: 1.4rem;
+}
+
+.delivery-policy {
+	font-size: 1.4rem;
+}
+
+.privacy-policy {
+	font-size: 1.4rem;
+}
+
+.product-returns-policy {
+	font-size: 1.4rem;
+}
+
+.content_policy {
+	font-size: 1.4rem;
 }
 
 /*---------------------
