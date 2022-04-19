@@ -48,7 +48,7 @@ public class SaveOrder extends HttpServlet {
             }
             cartDAO.delete(cart.getuId(), cart.getpId());
         }
-        response.sendRedirect("Home.jsp");
+        response.sendRedirect("resultOrder.jsp");
 
     }
 

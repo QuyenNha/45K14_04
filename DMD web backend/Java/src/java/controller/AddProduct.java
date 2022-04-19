@@ -18,35 +18,30 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Trong Thinh
  */
-@WebServlet(name = "AddProduct", urlPatterns = {"/AddProduct"})
+@WebServlet(name = "AddProduct", urlPatterns = { "/AddProduct" })
 public class AddProduct extends HttpServlet {
 
-    
-
-    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String name=request.getParameter("name");
-        String id=request.getParameter("id");
-        String img=request.getParameter("image");
-        String price=request.getParameter("price");
-        String des=request.getParameter("description");
-        String cate=request.getParameter("category");
-        ProductDAO pdao=new ProductDAO();
-        if (pdao.getProduct(id)==null)
-        pdao.addProduct(id, name, img,Integer.parseInt(price) , des, cate);
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        String name = request.getParameter("name");
+        String img = request.getParameter("image");
+        String price = request.getParameter("price");
+        String des = request.getParameter("description");
+        String cate = request.getParameter("category");
+        ProductDAO pdao = new ProductDAO();
+        pdao.addProduct( name, img, Integer.parseInt(price), des, cate);
+      
         response.sendRedirect("ManagerProduct.jsp");
-        
-    }
 
-    
+    }
 
 }

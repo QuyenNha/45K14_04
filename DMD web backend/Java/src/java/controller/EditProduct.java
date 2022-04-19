@@ -18,40 +18,42 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Trong Thinh
  */
-@WebServlet(name = "EditProduct", urlPatterns = {"/EditProduct"})
+@WebServlet(name = "EditProduct", urlPatterns = { "/EditProduct" })
 public class EditProduct extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String name=request.getParameter("name");
-        String id=request.getParameter("id");
-        String img=request.getParameter("image");
-        String price=request.getParameter("price");
-        String des=request.getParameter("description");
-        String cate=request.getParameter("category");
-        ProductDAO pdao=new ProductDAO();
+        request.setCharacterEncoding("UTF-8");
+        String name = request.getParameter("name");
+        String id = request.getParameter("id");
+        String img = request.getParameter("image");
+        String price = request.getParameter("price");
+        String des = request.getParameter("description");
+        String cate = request.getParameter("category");
+        ProductDAO pdao = new ProductDAO();
         pdao.updateProduct(id, name, img, Integer.parseInt(price), des, cate);
         response.sendRedirect("ManagerProduct.jsp");
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the
+    // + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -62,10 +64,10 @@ public class EditProduct extends HttpServlet {
     /**
      * Handles the HTTP <code>POST</code> method.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

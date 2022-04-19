@@ -38,7 +38,7 @@
                         <jsp:useBean id="CartDAO" scope="page" class="dao.CartDAO" />
                         <jsp:setProperty name="CartDAO" property="*" />
 
-                        <a class="btn btn-success btn-sm ml-3" href="LoadCart">
+                        <a class="btn btn-success btn-sm ml-3" href=${ACCOUNT==null?"Login.jsp":"LoadCart"}>
                             <i class="fa fa-shopping-cart"></i> Cart
                             <span class="badge badge-light">${CartDAO.getTotal(sessionScope.ACC.uId)}</span>
                         </a>

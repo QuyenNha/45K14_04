@@ -131,20 +131,20 @@ public class ProductDAO {
         return null;
     }
 
-    public boolean addProduct(String id, String name, String image, int price, String des, String cate) {
+    public boolean addProduct( String name, String image, int price, String des, String cate) {
         try {
             DBContext db = new DBContext();
             con = db.getConnection();
 
             if (con != null) {
-                String sql = "Insert into product values(?,?,?,?,?,?)";
+                String sql = "Insert into product values(?,?,?,?,?)";
                 ps = con.prepareStatement(sql);
-                ps.setString(1, id);
-                ps.setString(2, name);
-                ps.setString(3, image);
-                ps.setInt(4, price);
-                ps.setString(5, des);
-                ps.setString(6, cate);
+               
+                ps.setString(1, name);
+                ps.setString(2, image);
+                ps.setInt(3, price);
+                ps.setString(4, des);
+                ps.setString(5, cate);
                 int row = ps.executeUpdate();
                 if (row > 0) {
                     return true;
